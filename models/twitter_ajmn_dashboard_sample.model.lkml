@@ -10,15 +10,15 @@ datagroup: twitter_ajmn_dashboard_sample_default_datagroup {
 
 persist_with: twitter_ajmn_dashboard_sample_default_datagroup
 
-explore: tweet {}
-
-explore: location {
-  join: tweet {
+explore: tweet {
+  join: location {
     type: left_outer
-    relationship: one_to_many
-    sql_on: ${location.location_id} = ${tweet._location_id} ;;
+    relationship: many_to_one
+    sql_on: ${tweet._location_id} = ${location.location_id} ;;
   }
 }
+
+explore: location {}
 
 
 # Joining User and tweet table
