@@ -15,7 +15,7 @@ explore: tweet {}
 explore: location {
   join: tweet {
     type: left_outer
-    relationship: many_to_many
+    relationship: one_to_many
     sql_on: ${location.location_id} = ${tweet._location_id} ;;
   }
 }
