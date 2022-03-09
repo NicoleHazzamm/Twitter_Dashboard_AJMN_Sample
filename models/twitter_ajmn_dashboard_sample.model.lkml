@@ -22,10 +22,4 @@ explore: user {
     relationship: one_to_many
     sql_on: ${user.user_id} = ${tweet._user_id} ;;
   }
-  #joining the location with above
-  join: location {
-    type: left_outer
-    relationship: many_to_many
-    sql_on: ${tweet._location_id}} = ${location.location_id} ;;
-  }
 }
