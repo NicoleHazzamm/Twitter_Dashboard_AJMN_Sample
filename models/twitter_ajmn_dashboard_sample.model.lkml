@@ -14,4 +14,11 @@ explore: tweet {}
 
 explore: location {}
 
-explore: user {}
+
+explore: user {
+  join: tweet {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${user.user_id} = ${tweet._user_id} ;;
+  }
+}
