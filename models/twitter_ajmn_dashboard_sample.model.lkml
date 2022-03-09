@@ -10,13 +10,7 @@ datagroup: twitter_ajmn_dashboard_sample_default_datagroup {
 
 persist_with: twitter_ajmn_dashboard_sample_default_datagroup
 
-explore: tweet {
-  join: location {
-    type: left_outer
-    relationship: many_to_one
-    sql_on: ${tweet._location_id} = ${location.location_id} ;;
-  }
-}
+explore: tweet {}
 
 explore: location {}
 
